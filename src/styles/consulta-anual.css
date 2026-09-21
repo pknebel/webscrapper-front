@@ -1,0 +1,58 @@
+/*
+ * Regras da consulta anual que objetos de estilo inline não conseguem expressar:
+ * keyframes, :hover e :focus-visible.
+ *
+ * O restante da estilização segue o padrão do projeto (objetos inline no componente).
+ * Todas as classes usam o prefixo `ca-` e são aplicadas apenas pelos componentes novos,
+ * portanto nenhuma página existente é afetada.
+ */
+
+@keyframes ca-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ca-spinner {
+  animation: ca-girar 0.9s linear infinite;
+}
+
+.ca-botao:not(:disabled):hover {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+}
+
+.ca-botao:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.ca-botao:focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 2px;
+}
+
+.ca-link:hover {
+  background: #f1f8ec;
+}
+
+.ca-link:focus-visible {
+  outline: 3px solid #4a7a2c;
+  outline-offset: 3px;
+}
+
+/* O contêiner rolável da tabela é focável para permitir rolagem horizontal via teclado. */
+.ca-scroll:focus-visible {
+  outline: 3px solid #4a7a2c;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ca-spinner {
+    animation-duration: 2.4s;
+  }
+
+  .ca-botao:not(:disabled):hover,
+  .ca-botao:not(:disabled):active {
+    transform: none;
+  }
+}

@@ -19,11 +19,13 @@ build/
 .parcel-cache/
 .vite/
 .eslintcache
+.vercel
 
 # Cobertura de testes
 coverage/
 
 # Variáveis de ambiente
+# .env.example fica versionado de propósito: documenta as variáveis necessárias.
 .env
 .env.local
 .env.development.local
@@ -53,8 +55,6 @@ Thumbs.db
 
 # Arquivos de configuração locais
 .local
-
-package-lock.json
 
 # Relatórios
 *.lcov
